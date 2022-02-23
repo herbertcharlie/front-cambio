@@ -1,0 +1,34 @@
+<h1>  OPERACIÓN TIPO DE CAMBIO SOLES - DÓLARES</h1>
+<h2> Tipo de cambio actual: {{this.valorTC}}</h2>
+
+<div className="form-group col-md-4">
+  <label htmlFor="inputMonto">Monto</label>
+  <input type="number" [(ngModel)]="monto" className="form-control" id="inputMonto"  (change)="getMonto();"/>
+</div>
+
+<div className="form-group col-md-4">
+  <label htmlFor="inputMonedaOrigen">Moneda Origen</label>
+  <select  name="grado_instruccion_id" [(ngModel)]="monedaOrigenId"  id="inputMonedaOrigen" (change)="getMonedaOrigenId();">
+    <option key='1' value='1' >Soles</option>
+    <option key='2' value='2' >Dólares</option>
+  </select>
+</div>
+
+<div className="form-group col-md-4">
+  <label htmlFor="inputMonedaDestino">Moneda Destino</label>
+  <select  name="grado_instruccion_id" [(ngModel)]="monedaDestinoId"   id="inputMonedaDestino" (change)="getMonedaDestinoId();">
+    <option key='1' value='1' >Soles</option>
+    <option key='2' value='2' >Dólares</option>
+  </select>
+</div>
+
+<br>
+
+<input type="submit"   (click)="getOperacionTipoCambio();"/>
+
+<div className="form-group col-md-4">
+  <label htmlFor="inputMontoTC">Monto con Tipo de Cambio</label>
+  <input type="number" name="montoTC" [(ngModel)]="montoTC" id="inputMontoTC"/>
+</div>
+
+
